@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
-#include <arpa/inet.h>
+#include <arpa/inet.h>          
 #include <netinet/in.h>
 #include <sys/socket.h>
-
+                           
 #define SRV_PORT    3773
 #define SRV_ADDR    "192.168.2.255"
 #define MSG_MAXLEN  256

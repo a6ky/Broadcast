@@ -15,8 +15,8 @@ int main()
 {
 	int                sockfd;
 	struct sockaddr_in servaddr;
-	char               msg[MSG_MAXLEN];
 	socklen_t          addr_size; 
+	char               msg[MSG_MAXLEN];
 	int                msg_size;
 
 	sockfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
