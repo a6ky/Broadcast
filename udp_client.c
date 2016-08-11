@@ -21,9 +21,9 @@ int main()
 
 	sockfd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
 	if (sockfd == -1) {
-        perror("socket");
-        exit(-1);
-    }
+        	perror("socket");
+        	exit(-1);
+	}
 
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
@@ -31,21 +31,21 @@ int main()
 	servaddr.sin_port = htons(SRV_PORT);
 
 	if (bind(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) == -1) {
-    	perror("bind");
-    	exit(-1);
-    }
+    		perror("bind");
+    		exit(-1);
+	}
 
-    addr_size = sizeof(servaddr);
+	addr_size = sizeof(servaddr);
 
 	while (1) {
 		msg_size = recvfrom(sockfd, msg, MSG_MAXLEN, 0, (struct sockaddr *)&servaddr, &addr_size);
 		if (msg_size == -1) {
 			perror("recvfrom");
-	        exit(-1);
+	        	exit(-1);
 		} else
-	        printf("%s\n", msg);
-    }
+			printf("%s\n", msg);
+	}
 
-    close(sockfd);
+	close(sockfd);
 	exit(0);
 }
